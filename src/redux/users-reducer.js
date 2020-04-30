@@ -19,7 +19,6 @@ let initialState = {
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "FAKE": return {...state, fake: state.fake + 1}
         case FOLLOW:
             return {
                 ...state,
@@ -92,27 +91,27 @@ export const follow = (userId) => {
 
     return (dispatch) => {
         dispatch(toggleFollowingInProgress(true, userId));
-    usersAPI.follow(userId)
-        .then(response => {
-            if (response.data.resultCode == 0) {
-                dispatch(followSuccess(userId));
-            }
-            dispatch(toggleFollowingInProgress(false, userId));
-        });
-}
+        usersAPI.follow(userId)
+            .then(response => {
+                if (response.data.resultCode == 0) {
+                    dispatch(followSuccess(userId));
+                }
+                dispatch(toggleFollowingInProgress(false, userId));
+            });
+    }
 }
 export const unfollow = (userId) => {
 
     return (dispatch) => {
         dispatch(toggleFollowingInProgress(true, userId));
-    usersAPI.unfollow(userId)
-        .then(response => {
-            if (response.data.resultCode == 0) {
-                dispatch(unfollowSuccess(userId));
-            }
-            dispatch(toggleFollowingInProgress(false, userId));
-        });
-}
+        usersAPI.unfollow(userId)
+            .then(response => {
+                if (response.data.resultCode == 0) {
+                    dispatch(unfollowSuccess(userId));
+                }
+                dispatch(toggleFollowingInProgress(false, userId));
+            });
+    }
 }
 
 export default usersReducer;
