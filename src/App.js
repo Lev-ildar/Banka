@@ -7,7 +7,7 @@ import Music from "./components/Music/Music";
 import {Route, withRouter} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileInfo/ProfileContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./Login/Login";
 import {connect} from "react-redux";
