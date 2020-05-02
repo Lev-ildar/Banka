@@ -1,4 +1,4 @@
-/*
+
 import profileReducer, {addPostActionCreator, deletePost} from "./profile-reducer";
 import React from "react";
 
@@ -41,4 +41,4 @@ it(`after deleting length shouldn't be decremented if id is incorrect`, () => {
     let newState = profileReducer(state, action);
 
     expect(newState.posts.length).toBe(4);
-});*/
+});
