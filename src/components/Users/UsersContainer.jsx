@@ -2,8 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {
     follow, requestUsers,
-    setCurrentPage,
-    toggleFollowingInProgress,
+    setCurrentPage, toggleFollowingProgress,
     unfollow
 } from '../../redux/users-reducer';
 import Users from './Users';
@@ -58,30 +57,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-/*let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId))
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount))
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetchingAC(isFetching))
-        }
-    }
-}*/
-
-
 export default compose(
-    connect (mapStateToProps,{follow, unfollow, setCurrentPage, toggleFollowingInProgress, getUsers: requestUsers })
+    connect (mapStateToProps,{follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers: requestUsers })
 )(UsersContainer)
