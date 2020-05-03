@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7ecaecc039bca47cf4e9b56184fb4d22",
+    "revision": "d0aeffe2319b1e0e56ce9f8057e00c14",
     "url": "/Banka/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Banka/static/css/4.465c9335.chunk.css"
   },
   {
-    "revision": "87aaad84cc7733b87326",
+    "revision": "5169a732f9178cf1dc07",
     "url": "/Banka/static/css/main.45834628.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Banka/static/js/4.d5e83c17.chunk.js"
   },
   {
-    "revision": "87aaad84cc7733b87326",
-    "url": "/Banka/static/js/main.37ffcff0.chunk.js"
+    "revision": "5169a732f9178cf1dc07",
+    "url": "/Banka/static/js/main.d6ae96e2.chunk.js"
   },
   {
     "revision": "cafffe64132f774738e4",
