@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Lev-ildar/App/static/css/main.45834628.chunk.css",
+    "main.js": "/Lev-ildar/App/static/js/main.9361793b.chunk.js",
+    "main.js.map": "/Lev-ildar/App/static/js/main.9361793b.chunk.js.map",
+    "runtime-main.js": "/Lev-ildar/App/static/js/runtime-main.b6ef2ddf.js",
+    "runtime-main.js.map": "/Lev-ildar/App/static/js/runtime-main.b6ef2ddf.js.map",
+    "static/js/2.b710809b.chunk.js": "/Lev-ildar/App/static/js/2.b710809b.chunk.js",
+    "static/js/2.b710809b.chunk.js.map": "/Lev-ildar/App/static/js/2.b710809b.chunk.js.map",
+    "static/css/3.8989cf88.chunk.css": "/Lev-ildar/App/static/css/3.8989cf88.chunk.css",
+    "static/js/3.3e407f9a.chunk.js": "/Lev-ildar/App/static/js/3.3e407f9a.chunk.js",
+    "static/js/3.3e407f9a.chunk.js.map": "/Lev-ildar/App/static/js/3.3e407f9a.chunk.js.map",
+    "static/css/4.465c9335.chunk.css": "/Lev-ildar/App/static/css/4.465c9335.chunk.css",
+    "static/js/4.d5e83c17.chunk.js": "/Lev-ildar/App/static/js/4.d5e83c17.chunk.js",
+    "static/js/4.d5e83c17.chunk.js.map": "/Lev-ildar/App/static/js/4.d5e83c17.chunk.js.map",
+    "index.html": "/Lev-ildar/App/index.html",
+    "precache-manifest.61536cf3fa5188f9656cc417ed8fd868.js": "/Lev-ildar/App/precache-manifest.61536cf3fa5188f9656cc417ed8fd868.js",
+    "service-worker.js": "/Lev-ildar/App/service-worker.js",
+    "static/css/3.8989cf88.chunk.css.map": "/Lev-ildar/App/static/css/3.8989cf88.chunk.css.map",
+    "static/css/4.465c9335.chunk.css.map": "/Lev-ildar/App/static/css/4.465c9335.chunk.css.map",
+    "static/css/main.45834628.chunk.css.map": "/Lev-ildar/App/static/css/main.45834628.chunk.css.map",
+    "static/js/2.b710809b.chunk.js.LICENSE.txt": "/Lev-ildar/App/static/js/2.b710809b.chunk.js.LICENSE.txt",
+    "static/media/preloader.svg": "/Lev-ildar/App/static/media/preloader.715acee7.svg",
+    "static/media/user.png": "/Lev-ildar/App/static/media/user.4a2803fb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6ef2ddf.js",
+    "static/js/2.b710809b.chunk.js",
+    "static/css/main.45834628.chunk.css",
+    "static/js/main.9361793b.chunk.js"
+  ]
+}
