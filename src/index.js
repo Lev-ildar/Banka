@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import MainApp from "./App";
 
-ReactDOM.render(
-    <MainApp />
-    , document.getElementById('root'));
+ReactDOM.render(<MainApp />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
