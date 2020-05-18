@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainApp from './App';
+import SamuraiJSApp from './App';
 
-it ('renders without crashing', () => {
+it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<MainApp />, div);
+  ReactDOM.render(<SamuraiJSApp />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

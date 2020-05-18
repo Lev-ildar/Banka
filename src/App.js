@@ -1,32 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Settings from "./components/Settings/Settings";
-import News from "./components/News/News";
-import Music from "./components/Music/Music";
 import {BrowserRouter, Redirect, Route, Switch, withRouter} from "react-router-dom";
+
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./Login/Login";
+import LoginPage from "./components/Login/Login";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
+import {withSuspense} from "./hoc/withSuspense";
 
-const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
-const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
-class App extends React.Component {
-    catchAllUnhandledErrors = (reason, promice) => {
-        alert("Some error");
+
+class App extends Component {
+    catchAllUnhandledErrors = (reason, promise) => {
+        alert("Some error occured");
         //console.error(promiseRejectionEvent);
     }
     componentDidMount() {
         this.props.initializeApp();
         window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
-
     componentWillUnmount() {
         window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
@@ -35,33 +34,35 @@ class App extends React.Component {
         if (!this.props.initialized) {
             return <Preloader/>
         }
+
         return (
-                <div className='app-wrapper'>
+            <div className='app-wrapper'>
                 <HeaderContainer/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Switch>
-                    <Route exact path='/'
+                        <Route exact path='/'
                                render={() => <Redirect to={"/profile"}/>}/>
-                    <Route path='/dialogs'
-                           render={() => <React.Suspense fallback={<Preloader/>}>
-                               <DialogsContainer/></React.Suspense>}/>
-                    <Route path='/profile/:userId?'
-                           render={() => <React.Suspense fallback={<Preloader/>}>
-                               <ProfileContainer/></React.Suspense>}/>
-                    <Route path='/users'
-                           render={() => <UsersContainer/>}/>
-                    <Route path='/login'
-                           render={() => <Login/>}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/settings' component={Settings}/>
-                    <Route path='*'
-                           render={() => <div>404 NOT FOUND</div>}/>
+
+                        <Route path='/dialogs'
+                               render={withSuspense(DialogsContainer)}/>
+
+                        <Route path='/profile/:userId?'
+                               render={withSuspense(ProfileContainer)}/>
+
+                        <Route path='/users'
+                               render={() => <UsersContainer/>}/>
+
+                        <Route path='/login'
+                               render={() => <LoginPage/>}/>
+
+                        <Route path='*'
+                               render={() => <div>404 NOT FOUND</div>}/>
                     </Switch>
+
                 </div>
             </div>
-                    );
+        )
     }
 }
 
@@ -71,14 +72,14 @@ const mapStateToProps = (state) => ({
 
 let AppContainer = compose(
     withRouter,
-    connect (mapStateToProps, {initializeApp})) (App);
+    connect(mapStateToProps, {initializeApp}))(App);
 
-const MainApp = (props) => {
+const SamuraiJSApp = (props) => {
     return <BrowserRouter>
         <Provider store={store}>
-            <AppContainer />
+            <AppContainer/>
         </Provider>
     </BrowserRouter>
 }
 
-export default MainApp;
+export default SamuraiJSApp;
